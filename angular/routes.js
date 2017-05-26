@@ -10,12 +10,30 @@ myApp.config(['$routeProvider', function($routeProvider){
             // what is the alias of that controller.
         	controllerAs 	: 'myStats'
         })
+        .when('/view/:team1',{
+            // location of the template
+            templateUrl     : 'views/match-view.html',
+            // Which controller it should use 
+            controller      : 'matchController',
+            // what is the alias of that controller.
+            controllerAs    : 'matchC'
+        })
+             .when('/about',{
+            // location of the template
+            templateUrl     : 'about.html',
+            // Which controller it should use 
+            controller      : 'aboutController',
+            // what is the alias of that controller.
+            controllerAs    : 'aboutc'
+        })
+    
+    
     
 
         .otherwise(
             {
                 //redirectTo:'/'
-                template   : '<h1>404 page not found</h1>'
+                template   : '<h1 class = text-center >404 page not found</h1>'
             }
         );
 }]);

@@ -1,16 +1,29 @@
  <div class="container">
-  <div class="  col-lg-12">
-    <div class="input-group">
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Filter <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Year</a></li>
-          <li><a href="#">Name</a></li>
-          <li><a href="#">Score</a></li>
-         </ul>
-      </div><!-- /btn-group -->
-      <input type="text" class="form-control" placeholder="Search" aria-label="...">
-    </div><!-- /input-group -->
+  <div class= "row">
+   
+      
+      
+<div class=" col-lg-2 form-group">
+  
+  <select class="form-control" id="select" >
+        <option >Team 1</option>
+ <option >Team 2</option>
+    <option >Score_1</option>
+   
+    <option >Score_2</option>
+     <option >Date</option>
+    </select>
+</div>
+
+<div class="col-lg-10">
+      <input id=team1 ng-model=filterTeam.team1.name type="text" class="form-control" placeholder="Search Team 1" aria-label="...">
+      <input style="display:none" id=team2 ng-model=filterTeam2.team2.name type="text" class="form-control" placeholder="Search Team 2" aria-label="...">
+
+      <input  style="display:none" id=score1 ng-model=filterscore1.score1 type="text" class="form-control" placeholder="Search Score 1" aria-label="...">
+      <input style="display:none" id= score2 ng-model=filterscore2.score2 type="text" class="form-control" placeholder="Search Score 2" aria-label="...">
+      <input style="display:none" id=year ng-model = filterYear.date type="text" class="form-control" placeholder="Search Date" aria-label="... ">
+</div>
+ 
   </div>
 <br>
 
@@ -18,20 +31,78 @@
 <hr>
 <div class="row">
 <div class=" col-lg-offset-1 col-lg-10">
-<table class="table">
+
+<table class="table table-hover"">
   <thead class="thead-inverse">
     
    <tr> <th class="text-center">Date</th>
    <th class="text-center">Team 1</th>
-   <th class="text-center">Team 2</th>
    <th class="text-center">Score 1</th>
+
+   <th class="text-center">Team 2</th>
+ 
    
    <th class="text-center">Score 2</th>
-   <th class="text-center">Match</th>
+  
    </tr>
                                             
 </thead>
+<tbody ng-repeat=" obj in myStats.combined">
+
+  <tr class="clickable-row" ng-repeat="match in obj.matches  | filter:filterTeam | filter:filterTeam2| filter:filterscore1 | filter:filterscore2 | filter:filterYear">
+
+<td class="text-center" > {{match.date}}</td>
+<td class="text-center"> {{match.team1.name}}</td>
+<td class="text-center"> {{match.score1}}<p class="text-center" ng-show="match.score1 == null">--</p></td>
+<td class="text-center"> {{match.team2.name}}
+<td class="text-center"> {{match.score2}}<p class="text-center" ng-show="match.score2 == null">--</p></td>
+<td class="text-center"><a ng-href= '#/view/{{match.team1.name}}'>View Details</a></td>
+
+
+</tr>
+
+</tbody>
+
+
+
+
+
+
+
+
+
 </table>
 </div>
 </div>
  </div> 
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#select").on("change", function() {
+        if ($(this).val() === "Team 1") {
+            $("#team1").show();
+           
+
+
+        }
+           
+            if ($(this).val() === "Team 2") {
+             $("#team2").show();
+            
+        }
+        if ($(this).val() === "Score_1") {
+            $("#score1").show();
+             
+        }
+       
+        if ($(this).val() === "Score_2") {
+            $("#score2").show();
+             
+        }
+        if ($(this).val() === "Date") {
+            $("#year").show();
+           
+    }
+})})
+
+
+</script>
