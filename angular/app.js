@@ -5,8 +5,8 @@ myApp.controller('mainController', ['$http','$q', function($http,$q) {
     var main = this;
     this.combined = [];
     this.loadAllData = function() {
-        main.Json1 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json', {});
-        main.Json2 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json', {});
+        main.Json1 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json');
+        main.Json2 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json');
         
       
            //getting  promises
@@ -56,8 +56,8 @@ myApp.controller('matchController', ['$http','$q','$routeParams',function($http,
 
 
     this.loadAllData = function() {
-        main.Json1 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json', {});
-        main.Json2 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json', {});
+        main.Json1 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json');
+        main.Json2 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json');
         
     
            //getting  promises
@@ -136,8 +136,8 @@ myApp.controller('teamController', ['$http','$q','$routeParams',function($http,$
 
 
     this.loadAllData = function() {
-        main.Json1 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json', {});
-        main.Json2 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json', {});
+        main.Json1 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json');
+        main.Json2 = $http.get('https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json');
         
     
            //getting  promises
