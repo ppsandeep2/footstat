@@ -1,16 +1,53 @@
-<div class="card mb-3">{
-  <img class="card-img-top" src="..." alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title">{{matchC.team1}}</h4>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
+<div class="container">
+<div class="row">
+<div class="  col-sm-offset-1 col-sm-4  mt-4">
+                <div class="card">
+                    <img class="card-img-top"  src="http://www.coes.co.uk/Content/User/Upload/StaticPages/Football_FootballEquipment.jpg" >
+                    <div class="card-block">
+                       
+                        <div class="text-center" >
+                           <h2><a ng-href='index.html#!/team/{{matchC.team1code}}'>{{matchC.team1code}}</a></h2>
+                        </div>
+                        <div class="text-center" >
+                           <h3>{{matchC.score1}}</h3>
+                        </div>
+                        <div class="card-text text-center">
+                            <h3>{{matchC.team1name}}</h3>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                       <p class="text-center"><b>{{matchC.title}}</b></p>
+                        
+                        <p class="text-center">{{matchC.date}}</p>
+                    </div>
+                </div>
 </div>
-
- <a href="#/" class="btn btn-primary btn-primary"><span class="glyphicon glyphicon-home"></span> Go To Homepage</a>
-
+        
 
 
-
-
-
+        <div class=" col-sm-offset-2 col-sm-4  mt-4">
+                      <div class="card">
+                    <img class="card-img-top"  src="http://www.coes.co.uk/Content/User/Upload/StaticPages/Football_FootballEquipment.jpg" >
+                    <div class="card-block">
+                       
+                        <div class="text-center" >
+                           <h2><a ng-href='index.html#!/team/{{matchC.team2code}}'>{{matchC.team2code}}</a></h2>
+                        </div>
+                        <div class="text-center" >
+                           <h3>{{matchC.score2}}</h3>
+                        </div>
+                        <div class="card-text text-center">
+                           <h3>{{matchC.team2name}}</h3>                       
+                             </div>
+                    </div>
+                    <div class="card-footer">
+</span>
+                         <p class="text-center"><b>{{matchC.title}}</b></p>
+                        
+                        <p class="text-center">{{matchC.date}}</p>
+                    </div>
+                </div>
+</div>
+</div>
+ </div>
+ 

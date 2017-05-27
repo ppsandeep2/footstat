@@ -8,9 +8,9 @@
   <select class="form-control" id="select" >
         <option >Team 1</option>
  <option >Team 2</option>
-    <option >Score_1</option>
+    <option >Score 1</option>
    
-    <option >Score_2</option>
+    <option >Score 2</option>
      <option >Date</option>
     </select>
 </div>
@@ -52,11 +52,11 @@
   <tr class="clickable-row" ng-repeat="match in obj.matches  | filter:filterTeam | filter:filterTeam2| filter:filterscore1 | filter:filterscore2 | filter:filterYear">
 
 <td class="text-center" > {{match.date}}</td>
-<td class="text-center"> {{match.team1.name}}</td>
+<td class="text-center"> <a ng-href='index.html#!/team/{{match.team1.code}}'>{{match.team1.name}}</a></td>
 <td class="text-center"> {{match.score1}}<p class="text-center" ng-show="match.score1 == null">--</p></td>
-<td class="text-center"> {{match.team2.name}}
+<td class="text-center"> <a ng-href='index.html#!/team/{{match.team2.code}}'>{{match.team2.name}}</a></td>
 <td class="text-center"> {{match.score2}}<p class="text-center" ng-show="match.score2 == null">--</p></td>
-<td class="text-center"><a ng-href= '#/view/{{match.team1.name}}'>View Details</a></td>
+<td class="text-center"><a ng-href= 'index.html#!/view/{{match.team1.code}}/{{match.team2.code}}/{{match.date}}'>View Details</a></td>
 
 
 </tr>
@@ -89,12 +89,12 @@
              $("#team2").show();
             
         }
-        if ($(this).val() === "Score_1") {
+        if ($(this).val() === "Score 1") {
             $("#score1").show();
              
         }
        
-        if ($(this).val() === "Score_2") {
+        if ($(this).val() === "Score 2") {
             $("#score2").show();
              
         }

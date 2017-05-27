@@ -1,8 +1,7 @@
 //var myApp = angular.module('footballApp', ['ngRoute']); 
 
 myApp.config(['$routeProvider', function($routeProvider){
-    $routeProvider
-        .when('/',{
+    $routeProvider.when('/',{
             // location of the template
         	templateUrl		: 'views/index-view.html',
         	// Which controller it should use 
@@ -10,7 +9,7 @@ myApp.config(['$routeProvider', function($routeProvider){
             // what is the alias of that controller.
         	controllerAs 	: 'myStats'
         })
-        .when('/view/:team1',{
+         .when('/view/:team1/:team2/:date',{
             // location of the template
             templateUrl     : 'views/match-view.html',
             // Which controller it should use 
@@ -18,7 +17,7 @@ myApp.config(['$routeProvider', function($routeProvider){
             // what is the alias of that controller.
             controllerAs    : 'matchC'
         })
-             .when('/about',{
+            .when('/about',{
             // location of the template
             templateUrl     : 'about.html',
             // Which controller it should use 
@@ -27,7 +26,11 @@ myApp.config(['$routeProvider', function($routeProvider){
             controllerAs    : 'aboutc'
         })
     
-    
+      .when('/team/:teamcode/', {
+            templateUrl: 'views/team-view.html',
+            controller: 'teamController',
+            controllerAs: 'team'
+        })
     
 
         .otherwise(
